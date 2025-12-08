@@ -16,11 +16,12 @@ export default function Home() {
         </div>
         <div className={styles.heroImageContainer}>
           <Image 
-            src="/residential_and_commercial_plumber_denver_colorado.jpg" 
+            src="/residential and commercial plumber denver colorado.jpeg"
             alt="Peach Tree Plumbing mascot"
             width={500}
             height={750}
             className={styles.heroImage}
+            priority
           />
         </div>
       </section>

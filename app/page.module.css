@@ -11,9 +11,11 @@
   padding: 4rem 2rem;
   background-color: var(--primary);
   color: var(--neutral-light);
+  gap: 2rem;
 }
 
 .heroContent {
+  flex: 1;
   max-width: 600px;
 }
 
@@ -46,15 +48,19 @@
 }
 
 .heroImageContainer {
-  width: 500px;
-  height: 750px;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    flex: 1;
+    display: flex; /* a flex container to help center the image */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    max-width: 500px;
 }
 
 .heroImage {
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
 .faqSection {
