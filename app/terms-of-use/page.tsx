@@ -19,10 +19,10 @@ const TermsOfUse = () => {
       <p>In no event shall we be liable for any damages of any kind arising from the use of this website, including, but not limited to, direct, indirect, incidental, punitive, and consequential damages.</p>
       <h2>Contact us</h2>
       <p>If you have any questions about these terms of use, please contact us at:</p>
-      <p>Plumbing Co.</p>
-      <p>123 Main Street</p>
-      <p>Anytown, USA 12345</p>
-      <p>Phone: 123-456-7890</p>
+      <p>Peach Tree Plumbing</p>
+      <p>4210 S Galapago St</p>
+      <p>Englewood, CO 80110</p>
+      <p>Phone: 720-298-1900</p>
     </div>
   );
 };
