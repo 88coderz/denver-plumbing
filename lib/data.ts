@@ -1,4 +1,3 @@
-
 import { supabase } from './supabaseClient';
 
 export const getBlogPosts = async () => {
@@ -11,22 +10,23 @@ export const getBlogPosts = async () => {
     console.error('Error fetching blog posts:', error);
     return [];
   }
-
   return data;
 };
 
 export const getBlogPostBySlug = async (slug: string) => {
+  if (!slug) {
+      return null;
+  }
   const { data, error } = await supabase
     .from('blog_posts')
     .select('*')
-    .eq('slug', slug)
+    .ilike('slug', slug.trim())
     .single();
 
   if (error) {
     console.error(`Error fetching blog post with slug ${slug}:`, error);
     return null;
   }
-
   return data;
 };
 
@@ -47,6 +47,9 @@ export const getFaqs = async () => {
 };
 
 export const getService = async (slug: string) => {
+    if (!slug) {
+        return null;
+    }
     const { data, error } = await supabase
         .from('services')
         .select('*')

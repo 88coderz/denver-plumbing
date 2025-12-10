@@ -21,16 +21,16 @@ const BlogList: React.FC<BlogListProps> = ({ blogs }) => {
       <h2 className="text-center mb-4">Our Blog</h2>
       <Row>
         {blogs.map((blog) => (
-          <Col key={blog.id} lg={4} md={6} sm={12} className="mb-4">
-            <Link href={`/blogs/${blog.slug}`} style={{ textDecoration: 'none' }}>
-              <Card className="h-100">
-                <Card.Body>
-                  <Card.Title>{blog.title}</Card.Title>
-                  <Card.Text>{blog.description}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Link>
-          </Col>
+            <Col key={blog.id} lg={4} md={6} sm={12} className="mb-4">
+              <Link href={`/blogs/${blog.slug}`} style={{ textDecoration: 'none' }}>
+                <Card className="h-100">
+                  <Card.Body>
+                    <Card.Title>{blog.title}</Card.Title>
+                    <Card.Text>{blog.description}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
         ))}
       </Row>
     </Container>

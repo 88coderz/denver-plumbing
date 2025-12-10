@@ -25,6 +25,14 @@ const ArticleCarousel = () => {
         fetchArticles();
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((current) => (current === articles.length - 1 ? 0 : current + 1));
+        }, 5000); // 5 seconds
+
+        return () => clearInterval(interval);
+    }, [articles.length]);
+
     const nextSlide = () => {
         setActiveIndex((current) => (current === articles.length - 1 ? 0 : current + 1));
     };
@@ -38,20 +46,22 @@ const ArticleCarousel = () => {
     }
 
     return (
-        <div className={styles.carouselContainer}>
-            {articles.map((article, index) => (
-                <div key={article.id} className={`${styles.carouselSlide} ${index === activeIndex ? styles.active : ''}`}>
-                    <div className={styles.carouselCaption}>
-                        <h3 className={styles.carouselTitle}>{article.title}</h3>
-                        <p className={styles.carouselExcerpt}>{article.excerpt}</p>
-                        <Link href={`/blogs/${article.slug}`} className={styles.carouselButton}>Read More</Link>
-                    </div>
+        <div className={styles.carouselWrapper}>
+            <button onClick={prevSlide} className={styles.navButton}>&#10094;</button>
+            <div className={styles.carouselContainer}>
+                <div className={styles.carouselSlidesWrapper} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+                    {articles.map((article) => (
+                        <div key={article.id} className={styles.carouselSlide}>
+                            <div className={styles.carouselCaption}>
+                                <h3 className={styles.carouselTitle}>{article.title}</h3>
+                                <p className={styles.carouselExcerpt}>{article.excerpt}</p>
+                                <Link href={`/blogs/${article.slug}`} className={styles.carouselButton}>Read More</Link>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-            <div className={styles.carouselNav}>
-                <button onClick={prevSlide} className={styles.navButton}>&#10094;</button>
-                <button onClick={nextSlide} className={styles.navButton}>&#10095;</button>
             </div>
+            <button onClick={nextSlide} className={styles.navButton}>&#10095;</button>
         </div>
     );
 };

@@ -1,10 +1,23 @@
-
 import { getBlogPostBySlug } from '../../../lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+interface BlogPostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const slug = params?.slug;
+
+  if (!slug) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -18,8 +31,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const slug = params?.slug;
+
+  if (!slug) {
+    notFound();
+  }
+
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

@@ -1,18 +1,26 @@
+.carouselWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carouselContainer {
     position: relative;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 1rem;
     overflow: hidden;
     border-radius: 15px;
     background-color: var(--neutral-light);
 }
 
-.carouselSlide {
-    display: none;
+.carouselSlidesWrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
 }
 
-.carouselSlide.active {
-    display: block;
+.carouselSlide {
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
 .carouselCaption {
@@ -45,16 +53,6 @@
 
 .carouselButton:hover {
     background-color: #c76a4e;
-}
-
-.carouselNav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
 }
 
 .navButton {
