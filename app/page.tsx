@@ -1,5 +1,6 @@
 import Hero from '@/app/components/Hero';
 import Testimonials from '@/app/components/Testimonials';
+import Services from '@/app/components/Services';
 import CallToAction from '@/app/components/CallToAction';
 import ArticleCarousel from '@/app/components/ArticleCarousel';
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <div className="container">
         <Testimonials />
+        <Services />
         <section id="blog" className="py-5">
           <ArticleCarousel />
         </section>

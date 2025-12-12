@@ -33,6 +33,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-lilita-one), sans-serif;
 }
 
+.navbar-brand.text-secondary {
+  text-decoration: underline;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.navbar-brand.text-secondary:hover {
+  transform: scale(1.05);
+}
+
+
 .custom-btn {
   background-color: var(--brand-accent);
   color: var(--brand-neutral-light);
