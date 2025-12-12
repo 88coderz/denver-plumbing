@@ -1,9 +1,12 @@
 import React from 'react';
-import styles from '../Blog.module.css';
+import styles from '../BlogPost.module.css';
 import Image from 'next/image';
-import { supabase } from '../../lib/supabase';
+import Link from 'next/link';
+import { supabase } from '../lib/supabase';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -26,7 +29,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         <p className={styles.blogMeta}>Posted on {new Date(post.created_at).toLocaleDateString()}</p>
         {post.image && <Image src={post.image} alt={post.title} width={800} height={400} className={styles.blogImage} />}
         <div className={styles.blogPostContent}>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
         </div>
       </div>
     </div>

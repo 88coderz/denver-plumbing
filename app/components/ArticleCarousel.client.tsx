@@ -43,7 +43,7 @@ const ArticleCarouselClient: React.FC<{ articles: Article[] }> = ({ articles }) 
                     <div className="card-body">
                       <h5 className="card-title">{article.title}</h5>
                       <p className="card-text">{article.excerpt}</p>
-                      <Link href={`/blogs/${article.slug}`} className="custom-btn">
+                      <Link href={`/${article.slug}`} className="custom-btn">
                         Read More
                       </Link>
                     </div>
