@@ -14,13 +14,10 @@ async function getBlogPost(slug: string) {
     .eq('slug', slug)
     .single();
 
-  // If there is no data, the post was not found. Trigger the 404 page.
   if (!data) {
     notFound();
   }
 
-  // If there was a database error other than "not found", log it.
-  // The notFound() call above will have already handled the case where no rows are returned.
   if (error && error.code !== 'PGRST116') {
       console.error('Error fetching blog post:', error);
   }

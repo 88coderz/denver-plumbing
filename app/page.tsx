@@ -4,6 +4,8 @@ import Services from '@/app/components/Services';
 import CallToAction from '@/app/components/CallToAction';
 import ArticleCarousel from '@/app/components/ArticleCarousel';
 
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <>
