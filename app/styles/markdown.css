@@ -1,0 +1,152 @@
+/*
+This file contains the styling for all markdown content.
+It ensures that all blog posts have a consistent look and feel.
+*/
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    color: var(--brand-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-lilita-one), sans-serif;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.markdown-content h1 { font-size: 2.5rem; }
+.markdown-content h2 { font-size: 2.2rem; }
+.markdown-content h3 { font-size: 1.9rem; }
+.markdown-content h4 { font-size: 1.6rem; }
+.markdown-content h5 { font-size: 1.3rem; }
+.markdown-content h6 { font-size: 1.1rem; }
+
+.markdown-content p {
+    margin-bottom: 1.5rem;
+}
+
+.markdown-content a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.markdown-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--brand-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.markdown-content a:hover {
+    color: var(--brand-accent-dark);
+}
+
+.markdown-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.8rem;
+}
+
+.markdown-content li {
+    margin-bottom: 0.8rem;
+}
+
+.markdown-content blockquote {
+    border-left: 5px solid var(--brand-accent);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.markdown-content blockquote::before {
+    content: '\201C';
+    font-family: 'Georgia', serif;
+    font-size: 4rem;
+    color: var(--brand-accent);
+    opacity: 0.2;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.markdown-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, var(--brand-accent), var(--brand-primary));
+    margin: 3rem 0;
+    opacity: 0.6;
+}
+
+.markdown-content code {
+    background-color: #e8e8e8;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    color: #c41d7f;
+    font-size: 0.9em;
+}
+
+.markdown-content pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.markdown-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: 0.9em;
+}
+
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    text-align: left;
+}
+
+.markdown-content th {
+    background-color: #f7f7f7;
+    font-weight: 700;
+    color: var(--brand-primary);
+    font-family: var(--font-lilita-one), sans-serif;
+}
+
+.markdown-content tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.markdown-content tr:hover {
+    background-color: #f5f5f5;
+}
