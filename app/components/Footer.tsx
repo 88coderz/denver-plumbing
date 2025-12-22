@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYelp } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -19,7 +19,8 @@ const Footer: React.FC = () => {
         <div className={styles.footerColumn}>
           <h3 className={styles.footerColumnTitle}>Stay Connected</h3>
           <div className={styles.socialIcons}>
-            <a href="#" className={styles.socialIcon}><FaFacebook /></a>
+            <a href="https://www.facebook.com/people/Colorado-Plumbing-Solutions/61570501647326/#" className={styles.socialIcon}><FaFacebook /></a>
+            <a href="https://www.yelp.com/biz/peach-tree-plumbing-englewood-2?osq=denver+plumbing+team" className={styles.socialIcon}><FaYelp /></a>
             <a href="#" className={styles.socialIcon}><FaTwitter /></a>
             <a href="#" className={styles.socialIcon}><FaInstagram /></a>
           </div>
