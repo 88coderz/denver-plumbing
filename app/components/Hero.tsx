@@ -11,6 +11,8 @@ const Hero = () => {
           Fast, friendly, and reliable service for all your plumbing needs.
           <br />
           Serving Denver, Colorado.
+          <br />
+          Call or text us anytime when you need us!
         </p>
       </div>
       <div>

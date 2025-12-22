@@ -11,7 +11,7 @@ interface Faq {
 const faqs: Faq[] = [
     {
         question: "What areas do you serve?",
-        answer: "We serve the entire Denver metropolitan area, including Arvada, Aurora, Centennial, Englewood, Littleton, Thornton, and Westminster."
+        answer: "We serve the entire Denver metropolitan area, including Arvada, Aurora, Centennial, Englewood, Littleton, Thornton, Westminster and much more."
     },
     {
         question: "Do you offer emergency services?",
@@ -19,7 +19,7 @@ const faqs: Faq[] = [
     },
     {
         question: "What types of plumbing services do you offer?",
-        answer: "We offer a wide range of residential and commercial plumbing services, including: Drain cleaning, Water heater repair and installation, Leak detection and repair, Sewer line repair and replacement, Fixture installation and repair, Garbage disposal repair and installation, And more!"
+        answer: "We offer a wide range of residential and commercial plumbing services, including: Gas line repair and hooking up bbq's and fire places, Water heater repair and installation, Leak detection and repair, Fixture installation and repair, Garbage disposal repair and installation, And more!"
     },
     {
         question: "Are your plumbers licensed and insured?",
