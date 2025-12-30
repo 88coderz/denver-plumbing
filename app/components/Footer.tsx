@@ -14,7 +14,6 @@ const Footer: React.FC = () => {
           <h3 className={styles.footerColumnTitle}>Contact Us</h3>
           <p className={styles.footerText}>4210 South Galapago Street, Englewood, CO 80110</p>
           <p className={styles.footerText}>Email: PTP5280@gmail.com</p>
-          <p className={styles.footerText}>Email: coloradoplumbingsolutions@gmail.com</p>
           <p className={styles.footerText}>Phone: (720) 298-1900</p>
         </div>
         <div className={styles.footerColumn}>
